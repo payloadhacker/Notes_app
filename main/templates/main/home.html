@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block content %}
+    <div class="header">
+        <h1> My Notes</h1>
+        <div class="components">
+            <input type="text" placeholder="Search">
+          <a href="{% url 'create' %}" class="btn"> New Note</a>
+
+        </div>
+    </div>
+    
+    <div class="Notes">
+        {% for note in notes %}
+            <ul>
+                <li> <a href="{% url 'details'  %}"> {{ note.title }}</a></li>
+            </ul>
+        {% empty %} 
+            <p> No Notes yet</p>
+        {% endfor %}
+    </div>  
+{% endblock %} 

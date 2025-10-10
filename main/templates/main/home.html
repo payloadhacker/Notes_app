@@ -12,7 +12,7 @@
     <div class="Notes">
         {% for note in notes %}
             <ul>
-                <li> <a href="{% url 'details'  %}"> {{ note.title }}</a></li>
+                <li> <a href="{% url 'details' note.pk  %}"> {{ note.title }}</a></li>
             </ul>
         {% empty %} 
             <p> No Notes yet</p>

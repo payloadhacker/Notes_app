@@ -1,13 +1,21 @@
 {% extends 'main/base.html' %}
+
 {% block content %}
-    <div class="form">
-    {% csrf_token %}
-    <form method="post">
-        {{ form.as_p}}
-        <button type="submit" class="btn"> ADD</button>
+<div class="form-container">
+    <form method="post" class="note-form">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <div class="error">{{ field.errors|striptags }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="btn">ADD</button>
     </form>
-
-
-    </div>
-</>
+</div>
 {% endblock %}

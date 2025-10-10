@@ -1,55 +1,108 @@
 body {
-    background-color: #708993;
+    background-color: #708993; /* cool background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222;
 }
 
+/* 🔶 Header */
 .header {
+    background-color: #9c6b27; /* warm brown */
+    color: white;
     display: flex;
     align-items: center;
     padding: 10px 20px;
     justify-content: space-between;
-    background-color: #9c6b27 ;
-    color: white;
     border-bottom: 2px solid #ccc;
     border-radius: 10px;
     height: 60px;
-
 }
+
 .header h1 {
     margin: 0;
 }
 
-.components {
+/* 🧩 Form Layout */
+.form-container {
     display: flex;
-    gap: 10px;
-    align-items: center;
-
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
 }
-.components input {
+
+.note-form {
+    background-color: #f9f9f9; /* slightly lighter than #f1f1f1 */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* 🔹 Form Fields */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #444; /* slightly lighter than black */
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
     padding: 10px 12px;
     border: 1px solid #333;
     border-radius: 6px;
-     outline: none;
-
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #222;
 }
 
+/* ✨ Focus effect with themed border */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #9c6b27; /* warm brown highlight */
+    outline: none;
+    box-shadow: 0 0 5px rgba(156, 107, 39, 0.4); /* soft glow */
+}
+
+/* ❗ Error styling */
+.error {
+    color: #b33c3c; /* softer red */
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* ✅ Button Styling */
 .btn {
-     padding:10px 12px;
-    background-color: #708993;
+    padding: 10px 16px;
+    background-color: #708993; /* blue-gray */
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     text-decoration: none;
-
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
+
 .btn:hover {
-        background-color: #5E936C;
+    background-color: #5E936C; /* sage green */
 }
 
-
+/* 🗒 Notes grid (if you're showing notes) */
 .Notes {
     border-radius: 10px;
-    padding: 9px;
+    padding: 20px;
 }
 
 .Notes ul {
@@ -58,17 +111,24 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 14px; 
+    gap: 14px;
 }
 
 .Notes li {
-    background-color: #f9f9f9;
-    border: 1px solid #708993;
-    border-radius: 10px;
     padding: 30px;
+    border-radius: 10px;
     text-align: center;
+    border: 1px solid #ccc;
     transition: transform 0.2s ease, background-color 0.3s ease;
+    color: #222;
 }
+
+.note-detail.white  { background-color: #fff; }
+.note-detail.yellow { background-color: #fff9c4; }
+.note-detail.green  { background-color: #c8e6c9; }
+.note-detail.blue   { background-color: #bbdefb; }
+.note-detail.pink   { background-color: #f8bbd0; }
+.note-detail.orange { background-color: #ffe0b2; }
 
 .Notes li:hover {
     background-color: #9c6b27;
@@ -76,9 +136,17 @@ body {
     transform: scale(1.03);
 }
 
-
 .Notes a {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
     font-weight: 500;
 }
+
+
+
+.Notes li[style*="yellow"] { background-color: #fff9c4; }
+.Notes li[style*="blue"]   { background-color: #bbdefb; }
+.Notes li[style*="green"]  { background-color: #c8e6c9; }
+.Notes li[style*="pink"]   { background-color: #f8bbd0; }
+.Notes li[style*="orange"] { background-color: #ffe0b2; }
+

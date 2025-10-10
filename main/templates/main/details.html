@@ -1,6 +1,24 @@
-{% extendes from 'main/base.html %}
+{% extends 'main/base.html' %}
 
 {% block content %}
-<h1> Note Details</h1>
+    <div class="form-container">
+<div class="note-detail {{ note.colored|default:'white' }}">
+            <h2>{{ note.title }}</h2>
+            <p>{{ note.content }}</p>
+            <p><strong>Created:</strong> {{ note.created_at }}</p>
+            <p><strong>Last Updated:</strong> {{ note.updated_at }}</p>
 
-{% end block %}
+            {% if note.pinned %}
+                <p> This note is pinned</p>
+            {% endif %}
+
+            <a href="{% url 'edit_note' note.pk %}" class="btn">Edit</a>
+            <a href="{% url 'delete' note.pk %}" class="btn" style="background-color: #b33c3c;">Delete</a>
+            {% if note.colored %}
+                <a href="{% url 'details' note.pk %}" class="btn" style="background-color: #ccc; color: #000;">Remove Color</a>
+            {% else %}
+                <a href="{% url 'details' note.pk %}" class="btn" style="background-color: #ccc; color: #000;">Add Color</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

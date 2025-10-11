@@ -1,152 +1,174 @@
+/* ---------------------------
+   🌐 Base & Layout
+---------------------------- */
 body {
-    background-color: #708993; /* cool background */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #222;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-/* 🔶 Header */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ---------------------------
+   🧭 Header
+---------------------------- */
 .header {
-    background-color: #9c6b27; /* warm brown */
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    justify-content: space-between;
-    border-bottom: 2px solid #ccc;
-    border-radius: 10px;
-    height: 60px;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .header h1 {
-    margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
 }
 
-/* 🧩 Form Layout */
-.form-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 50px;
-}
-
-.note-form {
-    background-color: #f9f9f9; /* slightly lighter than #f1f1f1 */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-}
-
-/* 🔹 Form Fields */
-.form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 6px;
-    font-weight: bold;
-    color: #444; /* slightly lighter than black */
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    padding: 10px 12px;
-    border: 1px solid #333;
-    border-radius: 6px;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #fff;
-    color: #222;
-}
-
-/* ✨ Focus effect with themed border */
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color: #9c6b27; /* warm brown highlight */
-    outline: none;
-    box-shadow: 0 0 5px rgba(156, 107, 39, 0.4); /* soft glow */
-}
-
-/* ❗ Error styling */
-.error {
-    color: #b33c3c; /* softer red */
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-/* ✅ Button Styling */
-.btn {
-    padding: 10px 16px;
-    background-color: #708993; /* blue-gray */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #5E936C; /* sage green */
-}
-
-/* 🗒 Notes grid (if you're showing notes) */
-.Notes {
-    border-radius: 10px;
-    padding: 20px;
-}
-
+/* ---------------------------
+   🟨 Notes Grid
+---------------------------- */
 .Notes ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 14px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0;
 }
 
 .Notes li {
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    border: 1px solid #ccc;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-    color: #222;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
-
-.note-detail.white  { background-color: #fff; }
-.note-detail.yellow { background-color: #fff9c4; }
-.note-detail.green  { background-color: #c8e6c9; }
-.note-detail.blue   { background-color: #bbdefb; }
-.note-detail.pink   { background-color: #f8bbd0; }
-.note-detail.orange { background-color: #ffe0b2; }
 
 .Notes li:hover {
-    background-color: #9c6b27;
-    color: white;
-    transform: scale(1.03);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.Notes a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 500;
+.Notes li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
+/* ---------------------------
+   📝 Note Detail Page
+---------------------------- */
+.note-detail-container {
+  display: flex;
+  justify-content: center;
+}
 
+.note-detail {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+  max-width: 700px;
+  width: 100%;
+}
 
-.Notes li[style*="yellow"] { background-color: #fff9c4; }
-.Notes li[style*="blue"]   { background-color: #bbdefb; }
-.Notes li[style*="green"]  { background-color: #c8e6c9; }
-.Notes li[style*="pink"]   { background-color: #f8bbd0; }
-.Notes li[style*="orange"] { background-color: #ffe0b2; }
+.note-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #222;
+}
 
+.note-detail p {
+  margin-bottom: 12px;
+  color: #555;
+}
+
+/* ---------------------------
+   🧾 Form Styles
+---------------------------- */
+.form-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+}
+
+.form-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="password"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+form textarea {
+  min-height: 120px;
+}
+
+/* ---------------------------
+   🚀 Buttons
+---------------------------- */
+.btn {
+  background-color: #3a86ff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #265df2;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+/* ---------------------------
+   🖍️ Note Colors
+---------------------------- */
+.note-yellow { background-color: #fff9c4; }
+.note-green  { background-color: #d0f0c0; }
+.note-blue   { background-color: #e0f7fa; }
+.note-pink   { background-color: #fce4ec; }
+.note-orange { background-color: #ffe0b2; }

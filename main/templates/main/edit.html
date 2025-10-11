@@ -1,15 +1,11 @@
 {% extends 'main/base.html' %}
-
 {% block content %}
-    <div class="form-container">
-        <div class="note-form">
-            <h2>Edit Note</h2>
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="btn">Save Changes</button>
-                <a href="{% url 'details' note.pk %}" class="btn" style="background-color: #ccc; color: #000;">Cancel</a>
-            </form>
-        </div>
-    </div>
+<div class="form-card">
+  <h2>Edit Note</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Update</button>
+  </form>
+</div>
 {% endblock %}

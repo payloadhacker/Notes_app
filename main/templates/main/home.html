@@ -1,21 +1,23 @@
 {% extends 'main/base.html' %}
 {% block content %}
-    <div class="header">
-        <h1> My Notes</h1>
-        <div class="components">
-            <input type="text" placeholder="Search">
-          <a href="{% url 'create' %}" class="btn"> New Note</a>
+<div class="container">
+  <div class="header">
+    <h1>Your Notes</h1>
+    <a href="{% url 'create' %}" class="btn">+ New Note</a>
+  </div>
 
-        </div>
-    </div>
-    
-    <div class="Notes">
-        {% for note in notes %}
-            <ul>
-                <li> <a href="{% url 'details' note.pk  %}"> {{ note.title }}</a></li>
-            </ul>
-        {% empty %} 
-            <p> No Notes yet</p>
-        {% endfor %}
-    </div>  
-{% endblock %} 
+  <div class="Notes">
+    <ul>
+      {% for note in notes %}
+        <li class="note-{{ note.colored|default:'white' }}">
+          <a href="{% url 'details' note.pk %}">
+            {{ note.title }}
+          </a>
+        </li>
+      {% empty %}
+        <li>No notes yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

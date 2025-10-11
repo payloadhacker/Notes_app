@@ -4,5 +4,5 @@ from .models import Note
 class Noteform(ModelForm):
     class Meta: 
         model = Note
-        fields = '__all__'
+        fields = ['title', 'content', 'pinned', 'colored']
                

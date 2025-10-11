@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'main/index.html', {})
 
 def home(request):
-    notes = Note.objects.all()
+    notes = Note.objects.all().order_by("-pinned", "-updated_at")
     return render(request, "main/home.html", {"notes": notes})
 
 def addNote(request):
@@ -20,7 +20,7 @@ def addNote(request):
 
 def details(request, pk):
     note = get_object_or_404(Note, pk=pk)
-    return render(request, 'main/details.html', {'notes': note})
+    return render(request, 'main/details.html', {'note': note})
 
 
 def delete(request, pk):

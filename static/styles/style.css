@@ -1,9 +1,7 @@
-/* ---------------------------
-   🌐 Base & Layout
----------------------------- */
+
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background-color: #f0f2f5;
+  background-color: #432323;
   color: #333;
   margin: 0;
   padding: 0;
@@ -16,11 +14,8 @@ body {
   padding: 0 20px;
 }
 
-/* ---------------------------
-   🧭 Header
----------------------------- */
 .header {
-  background-color: #ffffff;
+  background-color: #B6AE9F;
   padding: 20px 30px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   border-radius: 12px;
@@ -36,9 +31,13 @@ body {
   color: #222;
 }
 
-/* ---------------------------
-   🟨 Notes Grid
----------------------------- */
+.logo-link, .btn-nav {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #132440;
+}
+
 .Notes ul {
   list-style: none;
   display: grid;
@@ -68,9 +67,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* ---------------------------
-   📝 Note Detail Page
----------------------------- */
 .note-detail-container {
   display: flex;
   justify-content: center;
@@ -96,9 +92,6 @@ body {
   color: #555;
 }
 
-/* ---------------------------
-   🧾 Form Styles
----------------------------- */
 .form-card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -122,9 +115,10 @@ form label {
 
 form input[type="text"],
 form input[type="password"],
+form input[type="email"],
 form textarea,
 form select {
-  width: 100%;
+  width: 95%;
   padding: 10px 14px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -136,11 +130,15 @@ form textarea {
   min-height: 120px;
 }
 
-/* ---------------------------
-   🚀 Buttons
----------------------------- */
+.subtext {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 10px;
+  text-align: center;
+}
+
 .btn {
-  background-color: #3a86ff;
+  background-color: #132440;
   color: #fff;
   border: none;
   padding: 10px 18px;
@@ -153,7 +151,7 @@ form textarea {
 }
 
 .btn:hover {
-  background-color: #265df2;
+  background-color: #16476A;
 }
 
 .btn-danger {
@@ -164,11 +162,16 @@ form textarea {
   background-color: #dc2626;
 }
 
-/* ---------------------------
-   🖍️ Note Colors
----------------------------- */
 .note-yellow { background-color: #fff9c4; }
 .note-green  { background-color: #d0f0c0; }
 .note-blue   { background-color: #e0f7fa; }
 .note-pink   { background-color: #fce4ec; }
 .note-orange { background-color: #ffe0b2; }
+
+.signup-banner {
+  color: #856404;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}

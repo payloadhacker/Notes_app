@@ -7,4 +7,6 @@ urlpatterns= [
     path('note/<int:pk>/', views.details, name ='details'),
     path('add/', views.addNote, name= 'create'),
     path('note/<int:pk>/delete/', views.delete, name ='delete'),
-    path('note/<int:pk>/edit/', views.edit, name='edit'),]
+    path('note/<int:pk>/edit/', views.edit, name='edit'),
+    path('login/', views.loginUser, name='login'),
+    path('signup/', views.signupUser, name='signup'),]

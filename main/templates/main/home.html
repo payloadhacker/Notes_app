@@ -20,4 +20,10 @@
     </ul>
   </div>
 </div>
+{% if not request.user.is_authenticated %}
+  <div class="signup-banner">
+    <p>Want to save your notes permanently? <a href="{% url 'signup' %}">Create an account</a></p>
+  </div>
+{% endif %}
+
 {% endblock %}

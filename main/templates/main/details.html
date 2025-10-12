@@ -5,15 +5,18 @@
     <div class="note-detail note-{{ note.colored|default:'white' }}">
       <h2>{{ note.title }}</h2>
       <p>{{ note.content }}</p>
-      <p><strong>Created:</strong> {{ note.created_at }}</p>
-      <p><strong>Last Updated:</strong> {{ note.updated_at }}</p>
+
+      <p><strong>Created:</strong> {{ note.created_at|date:"M d, Y H:i" }}</p>
+      <p><strong>Last Updated:</strong> {{ note.updated_at|date:"M d, Y H:i" }}</p>
 
       {% if note.pinned %}
-        <p>📌 This note is pinned</p>
+        <p>📌 <strong>Pinned Note</strong></p>
       {% endif %}
 
-      <a href="{% url 'edit' note.pk %}" class="btn">Edit</a>
-      <a href="{% url 'delete' note.pk %}" class="btn btn-danger">Delete</a>
+      <div style="margin-top: 20px;">
+        <a href="{% url 'edit' note.pk %}" class="btn"> Edit</a>
+        <a href="{% url 'delete' note.pk %}" class="btn btn-danger"> Delete</a>
+      </div>
     </div>
   </div>
 </div>
